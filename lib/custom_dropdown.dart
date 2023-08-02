@@ -109,7 +109,7 @@ class CustomDropdown extends StatefulWidget {
     this.canCloseOutsideBounds = true,
     this.hideSelectedFieldWhenOpen = false,
     this.fillColor = Colors.white,
-    this.valueBuilder,
+    required this.valueBuilder,
   })  : assert(items!.isNotEmpty, 'Items list must contain at least one item.'),
         assert(
           controller.text.isEmpty || items!.contains(controller.text),
@@ -148,7 +148,7 @@ class CustomDropdown extends StatefulWidget {
     this.canCloseOutsideBounds = true,
     this.hideSelectedFieldWhenOpen = false,
     this.fillColor = Colors.white,
-    this.valueBuilder,
+    required this.valueBuilder,
   })  : assert(
           (listItemBuilder == null && listItemStyle == null) ||
               (listItemBuilder == null && listItemStyle != null) ||
