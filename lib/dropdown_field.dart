@@ -96,7 +96,7 @@ class _DropDownFieldState extends State<_DropDownField> {
       borderSide: widget.errorBorderSide ?? _errorBorderSide,
     );
 
-    return Text('');
+    return Text('test');
 
     return TextFormField(
       controller: widget.controller,
