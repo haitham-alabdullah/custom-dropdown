@@ -41,7 +41,7 @@ class CustomDropdown extends StatefulWidget {
   final bool? canCloseOutsideBounds;
   final bool? hideSelectedFieldWhenOpen;
   final Future<List<String>> Function(String)? futureRequest;
-  final String Function(String)? valueBuilder;
+  final String Function(String) valueBuilder;
 
   //duration after which the 'futureRequest' is to be executed
   final Duration? futureRequestDelay;
@@ -70,7 +70,7 @@ class CustomDropdown extends StatefulWidget {
     this.onChanged,
     this.excludeSelected = true,
     this.fillColor = Colors.white,
-    this.valueBuilder,
+    required this.valueBuilder,
   })  : assert(items!.isNotEmpty, 'Items list must contain at least one item.'),
         assert(
           controller.text.isEmpty || items!.contains(controller.text),
