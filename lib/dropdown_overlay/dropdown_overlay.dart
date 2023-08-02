@@ -25,6 +25,7 @@ class _DropdownOverlay extends StatefulWidget {
   final _SearchType? searchType;
   final Future<List<String>> Function(String)? futureRequest;
   final Duration? futureRequestDelay;
+  final String Function(String)? valueBuilder;
 
   final _ListItemBuilder? listItemBuilder;
 
@@ -45,6 +46,7 @@ class _DropdownOverlay extends StatefulWidget {
     this.futureRequest,
     this.futureRequestDelay,
     this.listItemBuilder,
+    this.valueBuilder;
   }) : super(key: key);
 
   @override
@@ -233,7 +235,7 @@ class _DropdownOverlayState extends State<_DropdownOverlay> {
                                         Expanded(
                                           child: Text(
                                             headerText.isNotEmpty
-                                                ? headerText
+                                                ?(valueBuilder!=null ? valueBuilder(headerText) : headerText)
                                                 : widget.hintText,
                                             style: widget.headerStyle,
                                             maxLines: 1,
