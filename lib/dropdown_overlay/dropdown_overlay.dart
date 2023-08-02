@@ -235,7 +235,7 @@ class _DropdownOverlayState extends State<_DropdownOverlay> {
                                         Expanded(
                                           child: Text(
                                             headerText.isNotEmpty
-                                                ?(valueBuilder!=null ? valueBuilder(headerText) : headerText)
+                                                ?(widget.valueBuilder!=null ? widget.valueBuilder(headerText) : headerText)
                                                 : widget.hintText,
                                             style: widget.headerStyle,
                                             maxLines: 1,
