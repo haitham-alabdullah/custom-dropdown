@@ -187,7 +187,7 @@ class _CustomDropdownState extends State<CustomDropdown> {
       overlay: (size, hideCallback) {
         return _DropdownOverlay(
           items: widget.items ?? [],
-          valueBuilder: valueBuilder,
+          valueBuilder: widget.valueBuilder,
           controller: widget.controller,
           size: size,
           listItemBuilder: widget.listItemBuilder,
